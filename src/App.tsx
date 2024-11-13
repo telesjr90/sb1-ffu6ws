@@ -6,7 +6,7 @@ import { ProjectsPage } from './pages/ProjectsPage'
 import { BlogPage } from './pages/BlogPage'
 import { ContactPage } from './pages/ContactPage'
 
-export function App() {
+export default function App() {
   return (
     <BrowserRouter>
       <Navbar />
