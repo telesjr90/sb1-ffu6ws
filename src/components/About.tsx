@@ -9,9 +9,10 @@ export default function About() {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden">
               <img
-                src="/about-photo.png"
-                alt="Profile"
+                src="about-photo.png"
+                alt="Teles Santos Profile"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-[#FF9F1C] to-[#F71735] p-6 rounded-2xl">
