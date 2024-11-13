@@ -8,7 +8,7 @@ export default function About() {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=987&auto=format&fit=crop"
+                src="/about-photo.png"
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
