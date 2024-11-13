@@ -16,3 +16,7 @@
 
 [visual]
   enable = true
+  framework = "react"
+  ssg = "vite"
+  contentDirectory = "src/content"
+  contentModel = "git"
