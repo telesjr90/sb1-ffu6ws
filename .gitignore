@@ -35,3 +35,8 @@ lerna-debug.log*
 
 # Uploads do CMS
 public/images/uploads
+
+# Environment
+.env
+.env.local
+.env.*.local
