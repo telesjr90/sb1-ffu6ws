@@ -1,8 +1,10 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { blogPosts } from '../data/blog-posts';
+import { getBlogPosts } from '../utils/content';
 
 export default function Blog() {
+  const blogPosts = getBlogPosts();
+
   return (
     <section className="py-20 bg-[#1E293B]/30" id="blog">
       <div className="container mx-auto px-4">
@@ -16,7 +18,7 @@ export default function Blog() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
             <article
-              key={post.id}
+              key={post.slug}
               className="bg-[#1E293B]/50 rounded-xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300"
             >
               <div className="aspect-video overflow-hidden">
