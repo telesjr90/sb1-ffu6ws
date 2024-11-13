@@ -27,9 +27,9 @@ export default function About() {
               <span className="gradient-text">About Me</span>
             </h2>
             <p className="text-gray-300 mb-8">
-              Hey there! I'm a creative soul with a diverse background and a passion for 
-              pushing boundaries. From kitchen heat to code sheets, my journey has been 
-              anything but conventional. Here are three fun facts that shape who I am.
+              Brazilian writer living in the colonial occupation of Vancouver, BC, Canada. 
+              I live to tell stories, and make people laugh. Sometimes I make them cry, though. 
+              Checkout my stuff!
             </p>
             
             <div className="space-y-8">
