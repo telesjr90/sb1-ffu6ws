@@ -1,8 +1,11 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { BlogPost } from '../data/blog-posts';
 import { getBlogPosts } from '../utils/content';
 
-export default function Blog() {
+interface BlogProps {}
+
+const Blog: React.FC<BlogProps> = () => {
   const blogPosts = getBlogPosts();
 
   return (
@@ -16,31 +19,29 @@ export default function Blog() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
+          {blogPosts.map((post: BlogPost) => (
             <article
               key={post.slug}
               className="bg-[#1E293B]/50 rounded-xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300"
             >
-              <div className="aspect-video overflow-hidden">
+              <div className="relative">
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                  className="w-full h-48 object-cover"
                 />
+                <span className="absolute top-4 right-4 bg-blue-500 text-white text-sm px-3 py-1 rounded-full">
+                  {post.category}
+                </span>
               </div>
+
               <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-[#FF9F1C] text-sm">{post.category}</span>
-                  <span className="text-gray-400 text-sm">{post.date}</span>
-                </div>
-                <h3 className="text-xl font-bold mb-3">{post.title}</h3>
+                <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
                 <p className="text-gray-400 mb-4">{post.excerpt}</p>
-                <a
-                  href={`/blog/${post.slug}`}
-                  className="inline-flex items-center text-[#FF9F1C] hover:text-[#F71735] transition-colors"
-                >
-                  Read More <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-500">{post.date}</span>
+                  <ArrowRight className="w-5 h-5 text-blue-500" />
+                </div>
               </div>
             </article>
           ))}
@@ -48,4 +49,6 @@ export default function Blog() {
       </div>
     </section>
   );
-}
+};
+
+export default Blog;

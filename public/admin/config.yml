@@ -2,29 +2,18 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "public/images/uploads"
-public_folder: "/images/uploads"
+media_folder: "public/images"
+public_folder: "/images"
 
 collections:
   - name: "blog"
     label: "Blog"
-    folder: "src/content/blog"
+    folder: "content/blog"
     create: true
-    slug: "{{slug}}"
     fields:
       - {label: "Título", name: "title", widget: "string"}
       - {label: "Data", name: "date", widget: "datetime"}
-      - {label: "Categoria", name: "category", widget: "select", options: ["Writing", "Comedy", "Poetry", "Video"]}
-      - {label: "Imagem", name: "image", widget: "image"}
-      - {label: "Resumo", name: "excerpt", widget: "text"}
-      - {label: "Conteúdo", name: "content", widget: "markdown"}
-
-  - name: "portfolio"
-    label: "Portfolio"
-    folder: "src/content/portfolio"
-    create: true
-    fields:
-      - {label: "Título", name: "title", widget: "string"}
       - {label: "Categoria", name: "category", widget: "string"}
       - {label: "Imagem", name: "image", widget: "image"}
-      - {label: "Descrição", name: "description", widget: "text"}
+      - {label: "Resumo", name: "excerpt", widget: "text"}
+      - {label: "Conteúdo", name: "body", widget: "markdown"}
