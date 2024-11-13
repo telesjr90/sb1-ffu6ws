@@ -33,10 +33,6 @@ lerna-debug.log*
 # Netlify
 .netlify
 
-# Uploads do CMS
-public/images/uploads
-
-# Environment
-.env
-.env.local
-.env.*.local
+# Build
+dist
+build

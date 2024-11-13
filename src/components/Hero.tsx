@@ -1,43 +1,46 @@
 import React from 'react';
 import { ChevronDown, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
-    <div className="min-h-screen relative flex items-center justify-center overflow-hidden" id="home">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A]" />
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?q=80&w=2070')] bg-cover bg-center opacity-10" />
-      
-      <div className="container mx-auto px-4 relative z-10 text-center mt-16">
-        <div className="inline-flex items-center bg-gray-800/50 rounded-full px-4 py-2 mb-6">
-          <Sparkles className="w-4 h-4 text-[#FF9F1C] mr-2" />
-          <span className="text-gray-300">Welcome to my creative universe</span>
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-pink-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-600 mb-8">
+          <Sparkles size={16} className="mr-2" />
+          <span>Desenvolvedor Full Stack</span>
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-bold mb-6">
-          Hi, I'm <span className="text-[#FF9F1C]">Teles Santos</span>
-          <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF9F1C] to-[#F71735]">
-            Creative Storyteller
+        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
+          Transformando ideias em
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+            {' '}experiências digitais
           </span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          Weaving tales through fantasy writing, comedy, poetry, and visual storytelling
+        <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+          Criando soluções web inovadoras e responsivas com as mais recentes tecnologias
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-3 bg-gradient-to-r from-[#FF9F1C] to-[#F71735] rounded-full font-semibold hover:opacity-90 transition-opacity">
-            Explore My Work
-          </button>
-          <button className="px-8 py-3 border-2 border-[#FF9F1C]/20 rounded-full font-semibold hover:bg-[#FF9F1C]/10 transition-colors">
-            Watch Showreel
-          </button>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Link
+            to="/projects"
+            className="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition"
+          >
+            Ver Projetos
+          </Link>
+          <Link
+            to="/contact"
+            className="px-8 py-3 border-2 border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50 transition"
+          >
+            Contato
+          </Link>
+        </div>
+
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronDown size={24} className="text-gray-400" />
         </div>
       </div>
-
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <ChevronDown className="w-6 h-6 text-[#FF9F1C]" />
-      </div>
-    </div>
+    </section>
   );
 }
